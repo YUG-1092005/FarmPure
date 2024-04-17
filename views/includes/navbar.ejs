@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home"><i class="fa-solid fa-wheat-awn"></i></a>
+      <button class="navbar-toggler"
+       type="button" 
+       data-bs-toggle="collapse" 
+       data-bs-target="#navbarNavAltMarkup">
+       <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/home">Home</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="/products">Products</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="/products/new">Add New Product</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="/guide">Farmers Guide</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="/experts">Experts</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="/expert/registration">Expert Registration</a>
+        </div>
+        <div class="navbar-nav">
+          <a class="nav-link" href="/agriculture/schemes">Agricultural Assistance Hub</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <% if(!currUser) { %>
+            <a class="nav-link" href="/signup">User SignUp</a>
+            <a class="nav-link" href="/login">User LogIn</a>
+            <a class="nav-link" href="/expert/authenticate">Expert Login</a>
+          <% } %>
+          <% if(currUser) { %>
+            <a class="nav-link" href="/logout">LogOut</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>

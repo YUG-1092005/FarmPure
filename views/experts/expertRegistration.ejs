@@ -1,0 +1,93 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="note-container">
+    <div class="note-heading">
+        <h3><b>Note For Experts</b></h3>
+    </div>
+    <ul style="text-align: left; margin-top: 1.5rem;">
+        <li><b>Provide concise, actionable advice and offer timely responses to farmer inquiries.</b></li><br />
+        <li><b>Empower farmers with practical solutions and highlight potential risks and mitigation strategies.</b></li><br />
+        <li><b>Foster a supportive and collaborative environment and continuously update knowledge base for accurate guidance.</b></li><br />
+        <li><b>Note that you will not paid anything for your services so, be a part of charity.</b></li><br />
+        <h4 style="text-align: center;"><i>Best of luck!!</i></h4>
+    </ul>
+    <div>
+        <button class="next-btn">Next</button>
+    </div>
+</div>
+
+<div class="row" id="registrationForm" style="display: none;">
+    <div class="col-6 offset-3 mt-2">
+        <h2>Be a part of charity</h2>
+        <form method="POST" action="/expert/registration" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="username" class="form-label"><b>Username</b></label>
+                <input name="expert[username]" id="username" type="text" class="form-control" required/> 
+            
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter your username</div>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label"><b>Name</b></label>
+                <input name="expert[name]" id="name" type="text" class="form-control" required/> 
+            
+                <div class="invalid-feedback">Please enter your name</div>
+            </div>
+            <div class="mb-3">
+                <label for="profession" class="form-label"><b>Profession</b></label>
+                <input name="expert[profession]" id="profession" type="text" class="form-control" required/> 
+            
+                <div class="invalid-feedback">Please enter your current profession</div>
+            </div>
+            <div class="mb-3">
+                <label for="img" class="form-label"><b>Image</b></label>
+                <input name="expert[img]" id="img" type="file" class="form-control" required/> 
+            
+                <div class="invalid-feedback">Please upload your Image</div>
+            </div>
+            <div class="mb-3">
+                <label for="about" class="form-label"><b>About</b></label>
+                <textarea name="expert[about]" id="about" type="text" class="form-control" required></textarea>
+            
+                <div class="invalid-feedback">Please enter something about yourself</div>
+            </div>
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <label for="experience" class="form-label"><b>Experience</b></label>
+                    <input name="expert[experience]" id="experience" type="number" class="form-control" min="3" required/> 
+                
+                    <div class="invalid-feedback">Your experience should be more than 3 years</div>
+                </div>
+                <div class="col-8 mb-3">
+                    <label for="organization" class="form-label"><b>Organization</b></label>
+                    <input name="expert[organization]" class="form-control"id="organization" type="text" required/> 
+                
+                    <div class="invalid-feedback">Please enter your current Organization</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>Email</b></label>
+                <input name="expert[email]" id="Email" type="email" class="form-control" required/> 
+
+                <div class="invalid-feedback">Please enter your email</div>
+
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label"><b>Password</b></label>
+                <input name="expert[password]" type="password" id="password" class="form-control" required/> 
+
+                <div class="invalid-feedback">Please enter your strong password</div>
+
+            </div>
+            <button class="btn btn-md btn-dark form-btn">SignUp</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // JavaScript code to toggle the visibility of the registration form
+    document.querySelector('.next-btn').addEventListener('click', function () {
+        document.getElementById('registrationForm').style.display = 'block';
+        document.querySelector('.note-container').style.display = 'none';
+    });
+</script>

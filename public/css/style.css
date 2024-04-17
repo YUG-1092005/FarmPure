@@ -1,0 +1,462 @@
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: #F8EDFF !important;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Icon */
+.fa-wheat-awn {
+    font-size: 2rem;
+    color: #294B29;
+}
+
+/* Footer */
+.f-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #FEFBF6;
+    margin-top: 3rem;
+}
+
+.media {
+    font-size: 1.3rem !important;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+    margin-left: 0.5rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-icon {
+    margin-top: 2rem;
+    margin-right: 60rem;
+}
+.footer-icon p {
+    margin-top: 0.5rem;
+    margin-left: 0.8rem;
+    font-weight: 400;
+}
+
+.help-links {
+    margin-top: -6.5rem;
+    margin-right: 18rem;
+}
+
+.footer-elements {
+    display: flex;
+    margin-left:  18rem;
+    margin-top: -6.3rem;
+}
+
+/* cards */
+.product-card {
+   border: none !important;
+   margin-bottom: 1.5rem;
+   background-color: #F8EDFF !important;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text {
+    font-weight: 600 !important;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.form-btn {
+    border: none !important;
+    background-color: #294B29 !important;
+    color: #ffff !important;
+}
+
+/* Show */
+.btns {
+    display: flex;
+    gap: 1rem !important;
+}
+
+/* Home Page */
+.home-wel {
+    font-size: medium;
+    color: #294B29;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.wel-icon {
+    font-size: medium;
+}
+
+.About {
+    font-weight:bold;
+    color: #294B29;
+    margin-top: 1rem;
+}
+
+/* Guide Page */
+.headings {
+    font-weight:bold;
+    width:max-content;
+    height: max-content;
+    border-radius: 6px;
+    color: #294B29;
+    text-decoration: underline;
+}
+.headings:hover {
+    background-color: #8aac8a;
+    color: #222222;
+}
+
+.images {
+    height: 20rem;
+    width: 20rem;
+    object-fit: contain;
+    margin-left: 26rem;
+}
+
+/* Expert show page */
+.expert_info {
+    text-decoration: underline;
+}
+
+.message-icon {
+   font-size: 3rem;
+   margin-left: 15rem;
+   margin-top: -3rem;
+   color: #294B29;
+}
+.message-font {
+    text-decoration: underline;
+}
+
+/* Chat Feature */
+.chat-box {
+    width: 50%;
+    background-color: #D4E7C5;
+    margin-top: 1rem;
+    margin-left: 19rem;
+    overflow: hidden;
+    border-radius: 15px;
+    overflow-y: auto;
+    max-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.chat-box h2 {
+    background-color: #ffff;
+    text-align: center;
+    padding: 16px;
+    margin: 0; 
+    border-radius: 15px 15px 0 0; 
+}
+
+.chat {
+    display: flex;
+    flex: 1;
+}
+
+
+.chat p {
+    background-color: #ffff;
+    border-radius: 10px 10px 0 10px;
+    color: #222222;
+    font-size: 1rem;
+    padding: 16px;
+    font-weight: bold;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 60%;
+}
+
+.incoming {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.incoming p {
+    background-color: #F2EFE5;
+}
+
+.outgoing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    justify-content: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    padding: 14px;
+    align-items: center;
+}
+
+#messageInput {
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    width: 25rem;
+    text-align: center;
+    border-radius: 10px;
+    resize: none; 
+}
+
+.chat-input button {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    background-color: #F6F5F5;
+    margin-left: 2rem;
+    border: 1px solid black;
+    color: #222222;
+}
+
+/* navbar text */
+.nav-link:hover {
+    font-weight: bold;
+}
+
+/* home page values */
+.farmer-img {
+    height: 30rem;
+    width: 30rem;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.img-content {
+    display: flex;
+}
+
+.img-text {
+    width: 100%; 
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.values {
+    border: 1.5px solid rgb(34, 33, 33);
+    padding: 8.5px;
+    align-items: center;
+    text-align: center;
+    height: 3.5rem;
+    width: 55rem;
+    border-radius:8px;
+    color: #294B29;
+}
+
+.values:hover {
+    background-color: #3b653b;
+    color: #fff;
+    border: 1.5px solid black;
+}
+
+/* Schemes page */
+.container-scheme {
+    margin: 50 auto;
+}
+
+.container p {
+    font-weight: 600;
+}
+
+.container-rows {
+    display: table; 
+    width: 98%;
+    margin: 15px ;
+    padding: 12px;
+    font-size: medium;
+    background-color: #C6DCBA;
+    font-family: 'Montserrat', sans-serif !important;
+    box-shadow: 0px 2px 6px  0px  rgba(0,0,50,0.3);
+    border-radius: 5px;
+}
+
+.container-data {
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    padding: 5px ;
+    vertical-align: middle;
+    border: 0.5px solid transparent;
+    box-shadow: 0 0 0 0.5px black;
+}
+
+.title {
+    box-shadow: none;
+    background-color: #8aac8a;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+/* Note page for experts */
+.note-container {
+    position: relative;
+    background-color: #BFD8AF;
+    height:fit-content;
+    width: 50%;
+    color: #222222;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.next-btn {
+    position: absolute; 
+    bottom: -30px;
+    right: 0;
+    margin-bottom: 2rem;
+    height: 3rem;
+    width: 6rem;
+    border: none;
+    background-color: #D5F0C1;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+@media (max-width: 990px) {
+    .next-btn {
+        position: relative; 
+        bottom: auto;
+        right: auto; 
+        margin-left: auto; 
+        margin: 0 auto; 
+    }
+}
+
+.next-btn:hover{
+    background-color: #C5EBAA;
+    border: 1px solid black;
+}
+
+.note-heading {
+    background-color: #E1F0DA;
+    height: 4rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto; 
+    }
+
+    .footer-icon {
+        margin-right: 10%; 
+        margin-bottom: 12%;
+        text-align: center;
+    }
+
+    .help-links {
+        margin-right: 5%; 
+    }
+
+    .footer-elements {
+        margin-left: 5%; 
+    }
+
+    .images {
+        height: 15rem; 
+        width: 15rem; 
+        margin-left: 10%; 
+    }
+
+    .message-icon {
+        font-size: 2rem;
+        margin-left: 10%; 
+        margin-top: -2rem; 
+    }
+
+    .chat-box {
+        width: 80%; 
+        margin-left: 10%; 
+    }
+
+    #messageInput {
+        width: 80%; 
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .footer-icon,
+    .help-links,
+    .footer-elements,
+    .images,
+    .message-icon,
+    .chat-box {
+        margin: 0; 
+    }
+
+    #messageInput {
+        width: 90%; 
+    }
+
+    .container-scheme {
+        margin: 10px auto; 
+    }
+
+    .container-rows {
+        width: 95%; 
+    }
+}

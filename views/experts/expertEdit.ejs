@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+        <div class="col-8 offset-3">
+            <br>
+            <h2>Edit Your Profile</h2>
+            <br>
+
+            <form method="POST" action="/experts/<%=expert._id %>/?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label"><b>Name</b></label>
+                    <input name="expert[name]" value="<%= expert.name %>" type="text" class="form-control" required/>
+                
+                    <div class="invalid-feedback">Please enter your name</div>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="about" class="form-label"><b>About</b></label>
+                    <textarea name="expert[about]" class="form-control"><%= expert.about %></textarea>
+                
+                    <div class="invalid-feedback">Please write something about yourself</div>
+                </div>
+
+                <div class="mb-3">
+                    Expert Image <br />
+                    <img src="<%= originalExpertUrl %>" alt="expertImageUrl" width="250" height="250"/>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="img" class="form-label"><b>Your Image URL/Link</b></label>
+                    <input name="expert[img]" value="<%=expert.img.url%>" type="file" class="form-control" required/> 
+                </div>
+
+                <div class="row">
+                    <div class="col-4 mb-3">
+                        <div class="mb-3">
+                            <label for="organization" class="form-label"><b>Organization</b></label>
+                            <input name="expert[organization]" value="<%= expert.organization %>" type="text" class="form-control"  required/> 
+                        
+                            <div class="invalid-feedback">Please enter name of your current organization</div>
+                        </div>
+             
+                        <div class="mb-3">
+                            <label for="experience" class="form-label"><b>Experience</b></label>
+                            <input name="expert[experience]" value="<%= expert.experience %>" type="number" class="form-control"  min="3"/> 
+                        
+                            <div class="invalid-feedback">Please enter your work experience</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="profession" class="form-label"><b>Profession</b></label>
+                    <input name="expert[profession]" value="<%= expert.profession %>" type="text" class="form-control" required/> 
+                
+                    <div class="invalid-feedback">Please enter your current profession</div>
+                </div>
+                    <br>
+                <button class="btn btn-md btn-dark form-btn">Edit</button>
+                <br><br>
+            </form>
+        </div>
+    </div>

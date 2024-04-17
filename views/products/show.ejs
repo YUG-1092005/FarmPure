@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <div class="row">
+        <div class="col-8 offset-4">
+            <br>
+                <h2> <%= product.title %> </h2>
+            <br>
+        </div>
+
+        <div class="card col-8 offset-4 product-card" style="width: 20rem">
+            <img src="<%= product.image.url %>" class="card-img-top" alt="product_image" style="height: 18rem" >
+          
+            <div class="card-body">
+              <p class="card-text">
+               <i>Owned By <%= product.owner.username%></i><br /><br />
+                <%= product.description %> <br /> 
+                &#8377; <%= product.price.toLocaleString("en-IN")  %> <br />
+                <%= product.country %> <br />
+                <%= product.location  %> <br />
+                <i class="fa-solid fa-phone"></i> <%= product.contact %> <br />
+              </p>
+            </div>
+        </div>
+        
+        <% if(currUser && currUser.id === product.owner.id) { %>
+        <div class="btns mb-4">
+            <a href="/products/<%=product.id %>/edit" class="btn btn-dark offset-4  form-btn">Edit</a>
+            <br>
+            <form method="POST" action="/products/<%= product.id %>/?_method=DELETE">
+                <button class="btn btn-dark offset-4  form-btn">Delete</button>
+            </form>
+        </div>
+        <% } %>
+
+        <div class="col-8 offset-4 mb-3">
+            <% if(currUser) { %>
+            <h4>Reviews</h4>
+            <form action="/products/<%= product.id%>/review" method="POST" novalidate class="needs-validation">
+                <div class="mb-3 mt-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <!-- <input type="range" min="1" max="5" name="review[rating]" id="rating"  class="form-range"/> -->
+                    <fieldset class="starability-fade">
+                        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                      </fieldset>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="comment" class="form-label">Review</label>
+                    <textarea class="form-control" rows="6" cols="9" name="review[comment]" id="comment" required></textarea>
+                    
+                    <div class="invalid-feedback">Please enter comments for review</div>
+                </div>
+                <button class="btn btn-md btn-outline form-btn">Submit</button>
+            </form>
+       
+        <% } %>
+        <!-- <h4>All Reviews</h4> -->
+            <div class="row">
+                <% for(review of product.review) { %>
+                    <div class="card col-5 mt-3 ms-3">
+                        <div class="card-body">
+                            <h5 class="card-title">@ <%= review.createdBy.username%></h5>
+                            <p class="starability-result card-text" data-rating="<%= review.rating %>" style="font-size: 24px;"></p>
+                            <p class="card-text"><%= review.comment %></p>
+                            <% if(currUser && currUser.id === review.createdBy.id) { %>
+                            <form class="mb-3" method="POST" action="/products/<%= product.id %>/review/<%= review.id %>/?_method=DELETE">
+                                <button class="btn btn-dark btn-sm ">Delete</button>
+                            </form>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>

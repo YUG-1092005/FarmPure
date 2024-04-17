@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="chat-box">
+    <div class="heading">
+        <h2>Plant Your Questions Here!</h2>
+    </div>
+    <ul class="chat-section" id="box">
+
+        <% message.forEach(msgs => { %>
+
+            <% if (msgs.sender == userId) { %>
+                <li class="outgoing chat"><p><%= msgs.message %></p></li>
+            <% } else {  %>
+                <li class="incoming chat"><p><%= msgs.message %></p></li>
+                <% } %>
+        <% }) %>  
+    </ul>
+    
+    <hr />
+        <div class="chat-input">
+            <form id="chatForm" action="/expert/<%=expert.id%>/chat" method="POST" novalidate class="needs-validation">
+                <textarea placeholder="Message your doubts" id="messageInput" name="chat[message]"></textarea>
+                <input type="hidden" id="userId" value="<%= userId %>">
+                <button type="submit" id="send-btn" class="btn btn-sm btn-dark">
+                        send
+                </button> 
+
+            </form>
+        </div>
+</div>
+
+<script type="module" src="/js/chat.js"></script>
+
+

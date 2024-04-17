@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row">
+    <div class="col-6 offset-3 mt-2">
+        <h2>Expert Login</h2>
+        <form method="POST" action="/expert/authenticate" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label"><b>Username</b></label>
+                <input name="username" id="username" type="text" class="form-control" required/> 
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>Email</b></label>
+                <input name="email" id="email" type="email" class="form-control" required/> 
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label"><b>Password</b></label>
+                <input name="password" type="password" id="password" class="form-control" required/> 
+            </div>
+            <button class="btn btn-md btn-dark form-btn">Login</button>
+        </form>
+    </div>
+</div>

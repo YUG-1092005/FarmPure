@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<h3>Experts</h3>
+<body>
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2">
+        <% for(let expert of allExperts) { %>
+
+            <a href="/experts/<%= expert.id %>" class="card-link">
+                <div class="card col product-card">
+                    <img src="<%= expert.img.url %>" class="card-img-top" alt="product_img"  style="height: 18rem">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <b><%= expert.name %></b>
+                        <br />
+                        <%= expert.profession %>
+                        </p>
+                    </div>
+                </div>
+             </a> 
+        <% } %>
+    </div>
+</body>

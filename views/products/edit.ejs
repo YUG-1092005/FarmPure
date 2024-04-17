@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <div class="row">
+        <div class="col-8 offset-3">
+            <br>
+            <h2>Edit Product</h2>
+            <br>
+            
+            <form method="POST" action="/products/<%= product._id %>/?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="title" class="form-label"><b>Title</b></label>
+                    <input name="product[title]" value="<%= product.title %>" type="text" class="form-control" required/>
+                
+                    <div class="invalid-feedback">Please enter title of product</div>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="description" class="form-label"><b>Description</b></label>
+                    <textarea name="product[description]" class="form-control"  required><%= product.description %></textarea>
+                
+                    <div class="invalid-feedback">Please enter description of product</div>
+                </div>
+
+                <div class="mb-3">
+                    Original Product Image <br/>
+                    <img src="<%= originalProductUrl %>" alt="productUrl" width="250" height="250"/>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="image" class="form-label"><b>Upload New Image</b></label>
+                    <input name="product[image]" type="file" class="form-control" required/> 
+                </div>
+
+                <div class="row">
+                    <div class="col-4 mb-3">
+                        <div class="mb-3">
+                            <label for="price" class="form-label"><b>Price</b></label>
+                            <input name="product[price]" value="<%= product.price %>" type="number" class="form-control"  required/> 
+                        
+                            <div class="invalid-feedback">Please enter price of product</div>
+                        </div>
+             
+                        <div class="mb-3">
+                            <label for="country" class="form-label"><b>Country</b></label>
+                            <input name="product[country]" value="<%= product.country %>" type="text" class="form-control"  required/> 
+                        
+                            <div class="invalid-feedback">Please enter country of product</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label"><b>Location</b></label>
+                    <input name="product[location]" value="<%= product.location %>" type="text" class="form-control"  required/> 
+                
+                    <div class="invalid-feedback">Please enter location of product</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="contact" class="form-label"><b>Contact</b></label>
+                    <input name="product[contact]" value="<%=product.contact %>" type="Number" class="form-control" required/> 
+                
+                    <div class="invalid-feedback">Please enter your contact number</div>
+                </div>
+                    <br>
+                <button class="btn btn-md btn-dark form-btn">Edit</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
+</body>
